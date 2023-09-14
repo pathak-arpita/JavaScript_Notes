@@ -1,0 +1,81 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.containerbox {
+  /* display: flex;
+  justify-content: center;
+  justify-items: center; */
+  margin-bottom: 50px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.oval{
+   width: 150px;
+   height: 50px;
+   background-color: black;
+   border-radius: 50%;
+}
+
+.rectangle{
+    height: 50px;
+    width: 130px;
+    background-color: black;
+}
+
+.trapezoid{
+    height: 0;
+    width: 100px;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 100px solid black;
+}
+
+.parallelogram{
+    width: 150px;
+    height: 100px;
+    transform: skew(20deg);
+    background-color: black;
+}
+
+.triangle-up{
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 100px solid black;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 100px solid black;
+}
+
+.triangle-left{
+    width: 0;
+    height: 0;
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+    border-right: 100px solid black;
+}
+
+.triangle-right{
+    width: 0;
+    height: 0;
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+    border-left: 100px solid black;
+}
