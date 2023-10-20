@@ -1,4 +1,4 @@
-// Function Statement / Function Declaration  - 
+//! Function Statement / Function Declaration  - 
 function a(){
     console.log("Calling Function Statement - a");
 }
@@ -6,7 +6,7 @@ function a(){
 
 // --------------------------------------------------------------------------------------------//
 
-// Function Expression - 
+//! Function Expression - 
 const b = function(){
     console.log("Calling Function Expression - b");
 }
@@ -19,7 +19,7 @@ b();
 
 // --------------------------------------------------------------------------------------------//
 
-// Anonymous Function - 
+//! Anonymous Function - 
 //  The function having no name is known as anonymous function - they used as functions
 //   are  used as a values
 
@@ -30,7 +30,7 @@ c();
 
 // --------------------------------------------------------------------------------------------//
 
-//Named Function - 
+//! Named Function - 
 
 var d = function xyz (){
     console.log("Calling Named Function - d");
@@ -42,8 +42,8 @@ d();
 
 // --------------------------------------------------------------------------------------------//
 
-// CallBack Function - It is a function passed as an argument into another function, and executed/invoked 
-//                     when its outer function is executed.
+//! CallBack Function - It is a function passed as an argument into another function, and executed/invoked 
+//!                     when its outer function is executed.
 
 setTimeout(function(){
     console.log("This is Callback Function ------> Hiiiiiiii..........!!!!!!!!!!");
@@ -62,8 +62,8 @@ function x(y){
 
 // --------------------------------------------------------------------------------------------//
 
-// Currying - It is a function which takes multiple arguments into series of function 
-//            and each function will take single argument.
+//! Currying - It is a function which takes multiple arguments into series of function 
+//!            and each function will take single argument.
 
 function add(a){
     return function(b){
@@ -77,8 +77,8 @@ console.log("This is Currying Function ------> " + add(2)(3)(5));
 
 // --------------------------------------------------------------------------------------------//
 
-// Higher Order Function - It is a function which takes one or more function as an input and 
-//                         returns function as output.
+//! Higher Order Function - It is a function which takes one or more function as an input and 
+//!                         returns function as output.
 
 function multiply(x){
     return function(y){
@@ -91,7 +91,7 @@ console.log(product(3));
 
 // --------------------------------------------------------------------------------------------//
 
-// Generator Function - It is a function which can paused middle of execution and resume later.
+//! Generator Function - It is a function which can paused middle of execution and resume later.
 
 // NOTE -----------> 1. it can be written as " function* ".
 //                   2. "yield "keyword is used to pause the function and return a value.

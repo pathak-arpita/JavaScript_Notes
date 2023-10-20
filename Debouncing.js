@@ -1,6 +1,6 @@
-// Debouncing ---------------------------->
+//! Debouncing ---------------------------->
 // debouncing is nothing but calling function after perticular period of time. The purpose of it is 
-// to prevent calling function to often , which can lead to poor performance and unexpected behaviour.
+// to prevent calling function to often , which can lead to poor performance and unexpected behavior.
 
 let counter = 0;
 function getData(){
@@ -28,7 +28,7 @@ const fetchingData = debouncing(getData , 500);
 
 // --------------------------------------------------------------------------------------------//
 
-// Throttling ---------------------------->
+//! Throttling ---------------------------->
 // limiting the number of times a function gets called in a certain time period.
 
 let count = 0;
@@ -57,10 +57,10 @@ window.addEventListener("resize" , resizie)
 
 // --------------------------------------------------------------------------------------------//
 
-// Debouncing V/S Throttling --------------------->
+//! Debouncing V/S Throttling --------------------->
 
 // Debounce is most suitable for control events like typing or button clicks. 
 // Throttle is most suitable for continuous user events like resizing and scrolling.
 
-// In Debouncing if differnence between two keypress is xyz then do function call;
+// In Debouncing if difference between two keypress is xyz then do function call;
 // In throttling  make call to the function after xyz time;
