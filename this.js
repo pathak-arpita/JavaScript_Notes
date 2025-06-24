@@ -115,6 +115,43 @@ const obj_nestedArrowFunction2 = {
 }
 obj_nestedArrowFunction2.y(); // OUTPUT --------> window
 
+//^ 3.
+// const object = {
+//     name: 'Alice',
+//     greet: function () {
+//         console.log(this.name);
+//     }
+// };
+// const greetFunc = object.greet;
+// greetFunc(); // OUTPUT --------> undefined (In strict mode) or window.name (In non-strict mode)
+
+
+//^ 4.
+const call = {
+  caller: "mom", 
+  says: () => {
+    console.log(`Hey, ${this.caller} just called.`);
+  }
+};
+
+call.says();
+
+
+//^ 5. 
+var length = 4;
+function callback() {
+  console.log("// What is logged?",this.length); 
+}
+
+const object = {
+  length: 5,
+  method(callback) {
+    callback();
+  }
+};
+
+object.method(callback, 1, 2);
+
 //---------------------------------------------------------------------------------------------//
 
 //! Inside Dom ----------------------------> IT REFRNCE TO HTML ELEMENTS.
