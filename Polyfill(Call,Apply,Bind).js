@@ -1,102 +1,78 @@
-//! CALL --------------------->
-
-// 1. Normal way -
-
-const person_1= {
-    name : "Arpita",
-    age : "25"
+const my_name = {
+    firstName: "john",
+    lastName: "Doe"
 }
 
-function info_1(lastName){
-  console.log(`My name is ${this.name} ${lastName} and I am ${this.age} yrs old`);
+const fullName = function(dialouge)  {
+    console.log(`My name is ${this.firstName} ${this.lastName} & ${dialouge}`)
 }
 
-info_1.call(person_1 , "Pathak");
+//---------------------------------------------------------------------------------------------//
 
-//-----------------------------------------------//
+//^ 1 : Call ------------------------------------------>
 
-// 2. Polyfill -
+//! Normal way 
 
-Function.prototype.myCall = function(context= {} , ...args){
-    if(typeof this !== "function"){
-        throw new Error(this + "is not called");
+fullName.call(my_name, "I am comming from normal call method");
+
+//! Polyfill
+
+Function.prototype.myCallFunction = function (context = {}, ...args) {
+    if (typeof this !== "function") {
+        throw Error("this is not a function");
     }
 
     context.fn = this;
     context.fn(...args);
 }
 
-info_1.myCall(person_1 , "PATHAK");
+fullName.myCallFunction(my_name, "I am comming from polyfill of call method");
 
 //---------------------------------------------------------------------------------------------//
-//! APPLY --------------------->
 
-// 1. Normal way -
+//^ 1 : Apply ------------------------------------------>
 
-const person_2 = {
-    name : "Aditee",
-    age : "29"
-}
-function info_2(lastName){
-    console.log(`I am ${this.name} ${lastName} , I am ${this.age} yrs old.`)
-}
+//! Normal way 
 
-info_2.apply(person_2 , ["Pathak"])
+fullName.apply(my_name, ["I am comming from normal apply method"]);
 
-//-----------------------------------------------//
+//! Polyfill
 
-// 2. Polyfill -
-
-Function.prototype.myApply = function(context = {} , args = []){
+Function.prototype.myApplyFunction = function(context={} , args=[]){
     if(typeof this !== "function"){
-        throw new Error (this + "is not called");
+        throw Error("This is not function type");
     }
 
     if(!Array.isArray(args)){
-        throw new TypeError("Is not an Array");
+        throw Error("Passing arguments are not array type");
     }
 
     context.fn = this;
     context.fn(...args);
 }
 
-// info.myApply(person_1 , "PATHAK"); ---------------> Here Pathak is not written in Array so we get an Error here
-info_2.myApply(person_2 , ["PATHAK"]);
+fullName.myApplyFunction(my_name , ["I am comming from polyfill of apply method"])
 
 //---------------------------------------------------------------------------------------------//
-//! BIND --------------------->
 
-// 1. Normal way -
+//^ 1 : Bind ------------------------------------------>
 
-const person_3 = {
-    name : "Arpita",
-    age : "25" 
-} 
+//! Normal way 
 
-function info_3 (lastname) {
-    console.log(`Hi , I am ${this.name} ${lastname} , and my age is ${this.age} yrs old.`)
-}
+fullName.bind(my_name, "I am comming from normal Bind method")();
 
-// const info = info_3.bind(person_3); ---------------> It will return info_3 function in console
-// console.log(info);
 
-const info = info_3.bind(person_3); 
-     info("Pathak");
+//! Polyfill 
 
-//-----------------------------------------------//
-
-// 2. Polyfill -
-
-Function.prototype.myBind = function(context ={} , ...arg){
+Function.prototype.myBlindFunction = function(context={} , ...args){
     if(typeof this !== "function"){
-         throw new Error(this + "is not callable");
+        throw Error("this is not function type");
     }
 
     context.fn = this;
-    return function (...newArgs){
-        return context.fn(...arg, ...newArgs);
-    };
-};
+    return function(...newArgs){
+        context.fn(...args,...newArgs);
+    }
+}
 
-const infoBind = info_3.myBind(person_3);
-    infoBind("PATHAK");
+fullName.myBlindFunction(my_name , "I am comming from polyfill of Bind method")();
