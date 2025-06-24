@@ -1,92 +1,103 @@
-//! MAP --------------------->
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// 1. Normal way - 
+//*---------------------------------------------------------------------------------------------*//
 
-const arr_1 = [1,2,3,4,5];
-const myArr_1 = arr_1.map((num)=>{
-  return num*10;
-})
+//^ 1 : Map ------------------------------------------>
 
-console.log(myArr_1);
+//! Normal way 
 
-//-----------------------------------------------//
+const arr_map = arr.map((x) => {
+    return x * 10;
+});
+console.log("ans of arr_map--------> ", arr_map);
 
-// 2. Polyfill - 
 
-Array.prototype.myArr_1 = function(cb) {
-  let temp = [];
-  for(let i = 0; i<this.length ; i++){
-    temp.push(cb(this[i] , i , this));
-  }
-  return temp;
+//! Polyfill
+
+Array.prototype.myMapFunction = function (cb) {
+
+    if (!Array.isArray(this)) {
+        throw Error("this is not an array type.");
+    }
+
+    let temp = [];
+    for (let i = 0; i < this.length; i++) {
+        temp.push(cb(this[i], i, this));
+    }
+    return temp;
 }
 
-const myArray_1 = arr_1.myArr_1((num)=>{
-  return num*20;
+const arr_map_polyfill = arr.myMapFunction((x) => {
+    return x / 2;
 })
 
-console.log(myArray_1);
+console.log("ans of arr_map_polyfill--------> ", arr_map_polyfill);
 
-//---------------------------------------------------------------------------------------------//
-//! FILTER --------------------->
+//*---------------------------------------------------------------------------------------------*//
 
-// 1. Normal way - 
+//^ 2 : Filter ------------------------------------------>
 
-const arr_2 = [10,20,30,40,50];
-const myArr_2 = arr_2.filter((num)=>{
-      if(num > 20)
-      return num;
-})
-console.log(myArr_2);
+//! Normal way 
 
-//-----------------------------------------------//
+const arr_filter = arr.filter((x) => {
+    return x > 5;
+});
+console.log("ans of arr_filter--------> ", arr_filter);
 
-// 2. Polyfill - 
 
-Array.prototype.myArr_2 = function(cb){
-  let temp = [];
-  for(let i = 0; i<this.length ; i++){
-    if(cb(this[i] , i , this))
-    temp.push(this[i]);
-  }
-  return temp;
+//! Polyfill
+
+Array.prototype.myFIlterFunction = function (cb) {
+
+    if (!Array.isArray(this)) {
+        throw Error("this is not an array type.");
+    }
+
+    let temp = [];
+    for (let i = 0; i < this.length; i++) {
+        if (cb(this[i], i, this)) {
+            temp.push(this[i])
+        }
+    }
+    return temp;
 }
 
-const myArray_2 = arr_2.myArr_2((num)=>{
-  return num > 10
+const arr_filter_polyfill = arr.myFIlterFunction((x) => {
+    return x % 2 == 0;
 })
-console.log(myArray_2);
 
-//---------------------------------------------------------------------------------------------//
-//! REDUCER --------------------->
+console.log("ans of arr_filter_polyfill--------> ", arr_filter_polyfill);
 
-// 1. Normal way - 
+//*---------------------------------------------------------------------------------------------*//
 
-const arr_3 = [1,2,3,4,5,6,7,8,9,10];
+//^ 3 : Reducer ------------------------------------------>
 
-const myArr_3 = arr_3.reduce ((acc , curr)=>{
-  return acc+curr;
-})
-console.log(myArr_3);
+//! Normal way 
 
-//-----------------------------------------------//
+const arr_reducer = arr.reduce((acc, curr) => {
+    return acc + curr;
+}, 0);
+console.log("ans of arr_reducer--------> ", arr_reducer);
 
-// 2. Polyfill - 
 
-Array.prototype.myArr_3 = function (cb , initialValue){
-  var acc = initialValue;
-  for(let i = 0; i<this.length ; i++){
-    acc = acc ? cb(acc ,this[i] , i , this ) : this[i];
-  }
-  return acc;
+//! Polyfill
+
+Array.prototype.myReducerFunction = function (cb, initialVal) {
+
+    if (!Array.isArray(this)) {
+        throw Error("this is not an array type.");
+    }
+
+    let acc = initialVal;
+    for (let i = 0; i < this.length; i++) {
+        acc = acc ? cb(acc, this[i], i, this) : this[i];
+    }
+
+    return acc;
 }
 
-const myArray_3 = arr_3.myArr_3((acc ,curr)=>{
-    return acc+curr;
+const arr_reducer_polyfill = arr.myReducerFunction((curr, acc) => {
+    return curr + acc;
 },100)
-console.log(myArray_3);
 
-//---------------------------------------------------------------------------------------------//
-
-
- 
+console.log("ans of arr_reducer_polyfill--------> ", arr_reducer_polyfill);
