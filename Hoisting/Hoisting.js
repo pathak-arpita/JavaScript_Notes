@@ -1,5 +1,7 @@
 //! Hoisting --------------------->  Hoisting is the default behavior of moving all the
-//!                              declarations at the top of the scope before code execution.
+//!                                  declarations at the top of the scope before code execution.
+
+
 
 // 1.
 x = 5;
@@ -55,5 +57,3 @@ func2(); // -------------------------> OUTPUT - TypeError;
 var func2 = function (){
   console.log('Function 2 is Anonymous Function');
 }
-
-

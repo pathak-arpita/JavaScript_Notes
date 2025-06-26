@@ -15,7 +15,7 @@ a();
 b();
 
 //  NOTE -----------> DIFFERENCE BETWEEN THEM IS FUNCTION STATEMENT AND DECLARATION IS , 
-//                    FUNCTION STATEMENT CAN HOISTED , BUT FUNCTION DECLARATION CANNOT. 
+//                    FUNCTION STATEMENT CAN HOISTED , BUT FUNCTION EXPRESSION CANNOT. 
 
 // --------------------------------------------------------------------------------------------//
 
