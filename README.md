@@ -1,6 +1,5 @@
 <h2>🌟 JavaScript Topics – Study Plan -------------></h2>
-<br><br>
-
+<hr>
 <h3>STEP 1 -----------> (Foundational Concepts)<br></h3>
                      1. Let, Var & Const<br>
                      2. Block Scope & Shadowing<br>
