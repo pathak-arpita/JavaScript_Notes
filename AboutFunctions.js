@@ -62,8 +62,7 @@ function x(y){
 
 // --------------------------------------------------------------------------------------------//
 
-//! Currying - It is a function which takes multiple arguments into series of function 
-//!            and each function will take single argument.
+
 
 function add(a){
     return function(b){
