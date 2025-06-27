@@ -1,4 +1,4 @@
-//!  A function takes " another function " as argument or " rturns a function " is call "Higher order Function" .
+//!  A function takes " another function " as argument or " returns a function " is call "Higher order Function" .
 
 
 //^  Example 1: ------------> Passing a function as an argument
