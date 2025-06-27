@@ -53,8 +53,8 @@ Promise.myPromiseAllFunction = function (promiseArr) {
   })
 }
 
-Promise.myPromiseAllFunction([promise_1, promise_2]).then((res)=>{
-  console.log("From polyfill function --------> " , res);
-}).catch((err)=>{
-   console.log("error from polyfill function --------> " , err);
+Promise.myPromiseAllFunction([promise_1, promise_2]).then((res) => {
+  console.log("From polyfill function --------> ", res);
+}).catch((err) => {
+  console.log("error from polyfill function --------> ", err);
 })
