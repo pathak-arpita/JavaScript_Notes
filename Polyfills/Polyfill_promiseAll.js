@@ -5,7 +5,7 @@ const promise_1 = Promise.resolve("Promise 1 is resolved");
 const promise_2 = 40;
 const promise_3 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("Promise 3 is resolved");
+    reject("Promise 3 is rejected");
   }, 5000)
 })
 
@@ -16,7 +16,7 @@ const promise_3 = new Promise((resolve, reject) => {
 Promise.all([promise_1, promise_2, promise_3]).then((res) => {
   console.log("Normal way ---------> ", res)
 }).catch((err) => {
-  console.log("Normal way ---------> ", err)
+  console.log("error from Normal way ---------> ", err)
 })
 
 
@@ -53,8 +53,8 @@ Promise.myPromiseAllFunction = function (promiseArr) {
   })
 }
 
-Promise.myPromiseAllFunction([]).then((res)=>{
+Promise.myPromiseAllFunction([promise_1, promise_2]).then((res)=>{
   console.log("From polyfill function --------> " , res);
 }).catch((err)=>{
-   console.log("From polyfill function --------> " , err);
+   console.log("error from polyfill function --------> " , err);
 })
