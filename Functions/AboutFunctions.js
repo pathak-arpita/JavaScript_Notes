@@ -36,7 +36,7 @@ var d = function xyz (){
     console.log("Calling Named Function - d");
     console.log(xyz);
 }
-// xyz(); -------------------------> Here we get an Error because it is not declare globaly
+// xyz(); -------------------------> Here we get an Error because it is not declare globally
 //                                   But in line Node. 37 we can     
 d();
 

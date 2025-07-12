@@ -7,10 +7,10 @@ const xyz = new Promise((resolve, reject) => {
     setTimeout(() => {
         const result = true;
         if (result) {
-            resolve("Peomise is Fullfiled");
+            resolve("Promise is Fulfilled");
         }
         else {
-            reject(new Error("Peomise is Rejected"));
+            reject(new Error("Promise is Rejected"));
         }
     }, 5000)
 })

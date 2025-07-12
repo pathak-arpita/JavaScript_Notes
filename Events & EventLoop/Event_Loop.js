@@ -3,7 +3,7 @@
 //^ Ans --------->
 
 /*
-    Java script is synchronous - single thereaded language.
+    Java script is synchronous - single threaded language.
 
     The Event Loop is the mechanism that allows JavaScript to handle asynchronous operations like setTimeout, promises, or fetch without blocking the main thread.
 

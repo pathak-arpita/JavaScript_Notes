@@ -1,4 +1,4 @@
-//& NOTE -----------> " THIS KEYWORD " WORKS DIFFERNTLY IN STRICK MODE AND NON-STRICK MODE.
+//& NOTE -----------> " THIS KEYWORD " WORKS DIFFERENTLY IN STRICK MODE AND NON-STRICK MODE.
 
 "use strict";
 //! Global Scope ---------------------------->
@@ -6,7 +6,7 @@
 console.log(this);
 //OUTPUT --------> window
 
-//~ In javascript "this keyword" refres to the global object and it can be difernt based on where your running js code
+//~ In javascript "this keyword" refers to the global object and it can be different based on where your running js code
 //~ In browser it refers to window object & in node its global object etc.
 
 //---------------------------------------------------------------------------------------------//
@@ -24,7 +24,7 @@ x();
 
 
 //~ IN STICK MODE "THIS KEYWORD" USE "THIS SUBSTITUTION" PHENOMENON.
-//~ IN NON- STRICK MODE -------> IF THE VALUE OF THIS KEYWORD IS UNDEFINED OR NULL IT WILL REPLCAE IT WITH THE GLOBAL OBJECT.
+//~ IN NON- STRICK MODE -------> IF THE VALUE OF THIS KEYWORD IS UNDEFINED OR NULL IT WILL REPLACE IT WITH THE GLOBAL OBJECT.
 
 //---------------------------------------------------------------------------------------------//
 
@@ -79,16 +79,16 @@ printName_2(); // OUTPUT --------> suman
 
 //---------------------------------------------------------------------------------------------//
 
-//! Arrow Fuctions ---------------------------->  Arrow functions do not have their own "this" context, they inherit "this" from the parent scope.
+//! Arrow Functions ---------------------------->  Arrow functions do not have their own "this" context, they inherit "this" from the parent scope.
 
-const obj_arrowFuction = {
+const obj_arrowFunction = {
     x: 20,
     y: () => {
-        console.log("this inside y function of obj_arrowFuction ----->", this);
+        console.log("this inside y function of obj_arrowFunction ----->", this);
     }
 }
 
-obj_arrowFuction.y(); // OUTPUT --------> window
+obj_arrowFunction.y(); // OUTPUT --------> window
 
 // Nested Arrow Function ------>
 //^ 1.
@@ -154,6 +154,6 @@ object.method(callback, 1, 2);
 
 //---------------------------------------------------------------------------------------------//
 
-//! Inside Dom ----------------------------> IT REFRNCE TO HTML ELEMENTS.
+//! Inside Dom ----------------------------> IT REFER TO HTML ELEMENTS.
 
 //---------------------------------------------------------------------------------------------//

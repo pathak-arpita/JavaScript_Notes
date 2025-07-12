@@ -3,8 +3,8 @@ const my_name = {
     lastName: "Doe"
 }
 
-const fullName = function(dialouge)  {
-    console.log(`My name is ${this.firstName} ${this.lastName} & ${dialouge}`)
+const fullName = function(dialogue)  {
+    console.log(`My name is ${this.firstName} ${this.lastName} & ${dialogue}`)
 }
 
 //*---------------------------------------------------------------------------------------------*//
@@ -13,7 +13,7 @@ const fullName = function(dialouge)  {
 
 //! Normal way 
 
-fullName.call(my_name, "I am comming from normal call method");
+fullName.call(my_name, "I am coming from normal call method");
 
 //! Polyfill
 
@@ -26,7 +26,7 @@ Function.prototype.myCallFunction = function (context = {}, ...args) {
     context.fn(...args);
 }
 
-fullName.myCallFunction(my_name, "I am comming from polyfill of call method");
+fullName.myCallFunction(my_name, "I am coming from polyfill of call method");
 
 //*---------------------------------------------------------------------------------------------*//
 
@@ -34,7 +34,7 @@ fullName.myCallFunction(my_name, "I am comming from polyfill of call method");
 
 //! Normal way 
 
-fullName.apply(my_name, ["I am comming from normal apply method"]);
+fullName.apply(my_name, ["I am coming from normal apply method"]);
 
 //! Polyfill
 
@@ -51,7 +51,7 @@ Function.prototype.myApplyFunction = function(context={} , args=[]){
     context.fn(...args);
 }
 
-fullName.myApplyFunction(my_name , ["I am comming from polyfill of apply method"])
+fullName.myApplyFunction(my_name , ["I am coming from polyfill of apply method"])
 
 //*---------------------------------------------------------------------------------------------*//
 
@@ -59,7 +59,7 @@ fullName.myApplyFunction(my_name , ["I am comming from polyfill of apply method"
 
 //! Normal way 
 
-fullName.bind(my_name, "I am comming from normal Bind method")();
+fullName.bind(my_name, "I am coming from normal Bind method")();
 
 
 //! Polyfill 
@@ -75,4 +75,4 @@ Function.prototype.myBlindFunction = function(context={} , ...args){
     }
 }
 
-fullName.myBlindFunction(my_name , "I am comming from polyfill of Bind method")();
+fullName.myBlindFunction(my_name , "I am coming from polyfill of Bind method")();

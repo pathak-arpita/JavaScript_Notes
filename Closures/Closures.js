@@ -45,7 +45,7 @@ counter1();
 
 //*---------------------------------------------------------------------------------------------*//
 
-//! QUE). PRINT 1 TO 5 DATA AFTER PERTICULAR DELAY USING LET AND VAR ------------->
+//! QUE). PRINT 1 TO 5 DATA AFTER PARTICULAR DELAY USING LET AND VAR ------------->
 
 //^ using let -------->
 

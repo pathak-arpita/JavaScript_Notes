@@ -65,7 +65,7 @@ named_function();
 
 
 
-//! First Class Function /Firt Class Citizens --------------->
+//! First Class Function /First Class Citizens --------------->
 //*  A first-class function is a function treated like any other variable — it can be assigned to a variable, passed as an argument, or returned from another function.
 
 //^ passing function as parameter ---------->
@@ -80,7 +80,7 @@ console.log("ans ------> " , ans)
 
 //^ passing function as parameter ---------->
 function passingFunc() {
-    console.log("passing function as paramter");
+    console.log("passing function as parameter");
 }
 
 var first_class_func = function (param) {
