@@ -1,0 +1,159 @@
+//& NOTE -----------> " THIS KEYWORD " WORKS DIFFERENTLY IN STRICK MODE AND NON-STRICK MODE.
+
+"use strict";
+//! Global Scope ---------------------------->
+
+console.log(this);
+//OUTPUT --------> window
+
+//~ In javascript "this keyword" refers to the global object and it can be different based on where your running js code
+//~ In browser it refers to window object & in node its global object etc.
+
+//---------------------------------------------------------------------------------------------//
+
+//! Inside the function ---------------------------->
+function x() {
+    // value of this keyword will be different based on strick mode or non-strick mode.
+    console.log("this inside x function ----->", this);
+}
+
+x();
+
+//OUTPUT --------> 1. window (Non-strict mode)
+//                 2. undefined (Strict mode)
+
+
+//~ IN STICK MODE "THIS KEYWORD" USE "THIS SUBSTITUTION" PHENOMENON.
+//~ IN NON- STRICK MODE -------> IF THE VALUE OF THIS KEYWORD IS UNDEFINED OR NULL IT WILL REPLACE IT WITH THE GLOBAL OBJECT.
+
+//---------------------------------------------------------------------------------------------//
+
+//! "This keyword" value is depends on how the function is called ---------------------------->
+
+function y() {
+    console.log("this inside y function ----->", this);
+}
+
+y(); // OUTPUT --------> window (Non-strict mode) or undefined (Strict mode)
+window.y(); // OUTPUT --------> window
+
+//---------------------------------------------------------------------------------------------//
+
+//! Inside the Object ---------------------------->
+
+const obj = {
+    a: 10,
+    // x is the method of the object
+    x: function () {
+        console.log("this inside x function of obj ----->", this);
+        console.log("value of a ----->", this.a);
+    }
+}
+
+obj.x(); // OUTPUT --------> obj
+
+//---------------------------------------------------------------------------------------------//
+
+//! Call , Apply and Bind ----------------------------> by using them we can update the value of "this keyword".
+
+const student_1 = {
+    name: "arpita",
+    printName: function () {
+        console.log("this inside printName function ----->", this.name);
+    }
+}
+
+const student_2 = {
+    name: "suman",
+}
+
+// Using call method
+student_1.printName.call(student_2); // OUTPUT --------> suman
+
+// Using apply method
+student_1.printName.apply(student_2); // OUTPUT --------> suman     
+
+// Using bind method
+const printName_2 = student_1.printName.bind(student_2);
+printName_2(); // OUTPUT --------> suman
+
+//---------------------------------------------------------------------------------------------//
+
+//! Arrow Functions ---------------------------->  Arrow functions do not have their own "this" context, they inherit "this" from the parent scope.
+
+const obj_arrowFunction = {
+    x: 20,
+    y: () => {
+        console.log("this inside y function of obj_arrowFunction ----->", this);
+    }
+}
+
+obj_arrowFunction.y(); // OUTPUT --------> window
+
+// Nested Arrow Function ------>
+//^ 1.
+const obj_nestedArrowFunction = {
+    x: 30,
+    y: function () {
+        const z = () => {
+            console.log("this inside nested arrow function ----->", this);
+        }
+        z();
+    }
+}
+obj_nestedArrowFunction.y(); // OUTPUT --------> obj_nestedArrowFunction
+
+//^ 2.
+const obj_nestedArrowFunction2 = {
+    x: 30,
+    y: () => {
+        const z = () => {
+            console.log("this inside nested arrow function - example 2 ----->", this);
+        }
+        z();
+    }
+}
+obj_nestedArrowFunction2.y(); // OUTPUT --------> window
+
+//^ 3.
+// const object = {
+//     name: 'Alice',
+//     greet: function () {
+//         console.log(this.name);
+//     }
+// };
+// const greetFunc = object.greet;
+// greetFunc(); // OUTPUT --------> undefined (In strict mode) or window.name (In non-strict mode)
+
+
+//^ 4.
+const call = {
+  caller: "mom", 
+  says: () => {
+    console.log(`Hey, ${this.caller} just called.`);
+  }
+};
+
+call.says();
+
+
+//^ 5. 
+var length = 4;
+function callback() {
+  console.log("// What is logged?",this.length); 
+}
+
+const object = {
+  length: 5,
+  method(callback) {
+    callback();
+  }
+};
+
+object.method(callback, 1, 2);
+
+//---------------------------------------------------------------------------------------------//
+
+//! Inside Dom ----------------------------> IT REFER TO HTML ELEMENTS.
+
+//---------------------------------------------------------------------------------------------//
