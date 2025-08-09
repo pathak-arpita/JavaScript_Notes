@@ -3,7 +3,7 @@
 //^ Event capturing : 
 // Event capturing means the event starts from the top (like document) and goes down to the element that was clicked.
 
-//^ Event capturing : 
+//^ Event Bubbling : 
 // Event bubbling means the event starts from the clicked element (target) and goes up to its parent elements, one by one.
 
 //~ NOTE -----------------------> 

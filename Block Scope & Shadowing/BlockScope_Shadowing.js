@@ -16,7 +16,7 @@ console.log("x outside block -----> ", x);
 // x inside block ----->  100
 // x outside block ----->  100
 
-//^ Because var variable dont have block scope.
+//^ Because var variable don't have block scope.
 
 
 

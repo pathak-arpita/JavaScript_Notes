@@ -35,7 +35,7 @@ function y() {
 }
 
 y(); // OUTPUT --------> window (Non-strict mode) or undefined (Strict mode)
-window.y(); // OUTPUT --------> window
+// window.y(); // OUTPUT --------> window
 
 //---------------------------------------------------------------------------------------------//
 

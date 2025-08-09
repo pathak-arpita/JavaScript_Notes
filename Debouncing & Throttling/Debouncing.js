@@ -1,5 +1,5 @@
 //! Debouncing ---------------------------->
-//* Debouncing refers to calling a function only when the time gap between two events (like keystrokes) exceeds a   specified delay.
+//* Debouncing refers to calling a function only when the time gap between two events (like keystrokes) exceeds a specified delay.
 //* It helps prevent the function from being called too often, which can lead to poor performance and unexpected behavior.
 
 
