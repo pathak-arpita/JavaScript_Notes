@@ -24,3 +24,17 @@ function multiply(x) {
 
 const ans = multiply(2);
 ans(23);
+
+
+
+// --------------------------------------------------------------------------------------------//
+
+//! DIFFERENCE BETWEEN HIGHER ORDER FUNCTION AND FIRST ORDER FUNCTION -------->  
+
+//^ ---------------->
+//* FIRST ORDER FUNCTION  :
+// It is simply a function that does not take another function as an argument and does not return another function.
+
+//* HIGHER ORDER FUNCTION : 
+// A function takes " another function " as argument or " returns a function " is call "Higher order Function" .
+
