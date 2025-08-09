@@ -35,6 +35,21 @@ ans(23);
 //* FIRST ORDER FUNCTION  :
 // It is simply a function that does not take another function as an argument and does not return another function.
 
+function square(num) {
+  return num * num;
+}
+
+console.log(square(5));
+
 //* HIGHER ORDER FUNCTION : 
 // A function takes " another function " as argument or " returns a function " is call "Higher order Function" .
 
+function greeting(){
+    return "Hi from greeting !!!!";
+}
+
+function myName(name , message){
+    console.log(`My name is ${name} and my message is ${message}`);
+}
+
+myName("Arpita" , greeting())
