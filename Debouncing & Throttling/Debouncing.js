@@ -18,13 +18,11 @@ function getCountFromDebouncing() {
 }
 
 const debouncing = function (fn, delay) {
-    let timer ; 
-    return function () {
-        let context = this;
-        args = arguments;
+    let timer;
+    return function (...args) {
         clearTimeout(timer);
         timer = setTimeout(() => {
-            fn.apply(context, args);
+            fn.apply(this, args);
         }, delay)
     }
 }
