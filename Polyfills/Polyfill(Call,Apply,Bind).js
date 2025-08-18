@@ -71,7 +71,7 @@ Function.prototype.myBlindFunction = function(context={} , ...args){
 
     context.fn = this;
     return function(...newArgs){
-        context.fn(...args,...newArgs);
+        return context.fn(...args,...newArgs);
     }
 }
 
