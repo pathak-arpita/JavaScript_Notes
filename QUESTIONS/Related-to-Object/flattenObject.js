@@ -2,7 +2,11 @@ const obj = {
     name: "Arpita",
     address: {
         city: "Pune",
-        pinCode: 411001
+        pinCode: 411001,
+        area: {
+            location: "Kothrud",
+            leanNo: { No: 17 }
+        }
     },
     sample: { add: [1, 3, 3, 4, 5, 3] },
     demo: [1, 3, 3, 4, 5, 3],
@@ -23,10 +27,16 @@ function flattenObject(obj) {
                     }
                 }
                 else {
-                    result[`${item}.${innerItem}`] = newObj[innerItem];
+                    if (typeof newObj[innerItem] === "object" && !Array.isArray(newObj[innerItem])) {
+                        let deeper = flattenObject(newObj[innerItem]);
+                        for (let key in deeper) {
+                            result[`${item}.${innerItem}.${key}`] = deeper[key];
+                        }
+                    } else {
+                        result[`${item}.${innerItem}`] = newObj[innerItem];
+                    }
                 }
             }
-
         }
         else if (Array.isArray(obj[item])) {
             let index = 0;
@@ -44,6 +54,7 @@ function flattenObject(obj) {
 
 const ans = flattenObject(obj);
 console.log("ans --> ", ans);
+
 
 
 //! ans ------------>  {
