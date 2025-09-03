@@ -1,3 +1,6 @@
+//!   QUE ------> 1.
+//^   Group the items of the same age
+
 const people = [
     { name: "Arpita", age: 25 },
     { name: "Rahul", age: 30 },
@@ -5,10 +8,6 @@ const people = [
     { name: "Babita", age: 28 },
     { name: "Rekha", age: 30 }
 ];
-
-
-//!   QUE ------> 1.
-//^   Group the items of the same age
 
 let grouped = {};
 for (let item of people) {
@@ -26,16 +25,18 @@ console.log("Group the items of the same age ------> ", grouped);
 //^   Arrange name by Ascending Order
 
 let ans = [...people].sort((a, b) => a.name > b.name ? 1 : -1);
-console.log("Arrange name by Ascending Order ------> ", ans)
+// console.log("Arrange name by Ascending Order ------> ", ans)
 
 // --------------------------------------------------------------------------------------------//
 
-//!   QUE ------> 2.
+//!   QUE ------> 3.
 //^   Show key only based on particular condition is true without using any extra object.
 
 let obj = {
     name: "Arpita Pathak",
-    ...((6 < 5) ? {age : "28"}: {})
+    ...((6 < 5) ? { age: "28" } : {})
 }
 
-console.log("Show key only based on particular condition is true without using any extra object ------> ", obj)
+// console.log("Show key only based on particular condition is true without using any extra object ------> ", obj)
+
+// --------------------------------------------------------------------------------------------//

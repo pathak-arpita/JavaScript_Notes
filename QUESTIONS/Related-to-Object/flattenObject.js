@@ -74,3 +74,78 @@ console.log("ans --> ", ans);
 //   'demo[4]': 5,
 //   'demo[5]': 3
 //! }
+
+//* -------------------------------------------------------------------------------------------- *//
+
+//!   QUE ------> 2.
+//^   Convert an object with nested properties into a flat object (flatten object).
+
+const myObj = {
+    name: "Arpita",
+    age: 25,
+    address: {
+        city: "Pune",
+        state: "Maharashtra",
+        pinCode: 411001,
+        location: {
+            lat: 18.5204,
+            lng: 73.8567
+        }
+    }
+}
+
+let result = {};
+function flattenObject(obj, prefix = "") {
+    for (let item in obj) {
+        if (typeof obj[item] === "object") {
+            flattenObject(obj[item], prefix ? `${prefix}.${item}` : item);
+        }
+        else {
+            let newKey = prefix ? `${prefix}.${item}` : item;
+            result[newKey] = obj[item];
+        }
+    }
+    return result;
+}
+
+const ans_flatten_object = flattenObject(myObj, "");
+console.log("ans_flatten_object ---> ", ans_flatten_object);
+
+
+//* -------------------------------------------------------------------------------------------- *//
+
+
+//!   QUE ------> 3.
+//^   Recreate the object from a flattened object.
+
+const myFlattenedObj = {
+    name: 'Arpita',
+    age: 25,
+    'address.city': 'Pune',
+    'address.state': 'Maharashtra',
+    'address.pincode': 411001,
+    'address.location.lat': 18.5204,
+    'address.location.lng': 73.8567
+}
+
+function reCreateObject(obj) {
+    let result = {};
+    for (let item in obj) {
+        let newKeyArr = item.split(".");
+        let curr = result;
+
+        for (let i = 0; i < newKeyArr.length - 1; i++) {
+            let key = newKeyArr[i];
+
+            if (!curr[key]) {
+                curr[key] = {};
+            }
+            curr = curr[key]
+        }
+        curr[newKeyArr[newKeyArr.length - 1]] = obj[item];
+    }
+    return result;
+}
+
+const back_to_obj = reCreateObject(myFlattenedObj);
+console.log("back_to_obj ---> ", back_to_obj);
